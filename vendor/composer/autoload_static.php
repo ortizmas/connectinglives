@@ -80,6 +80,7 @@ class ComposerStaticInit5d57b79dc2a698b20705bab91580e923
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'LaravelLegends\\PtBrValidator\\' => 29,
         ),
         'I' => 
         array (
@@ -237,6 +238,10 @@ class ComposerStaticInit5d57b79dc2a698b20705bab91580e923
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'LaravelLegends\\PtBrValidator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravellegends/pt-br-validator/src/pt-br-validator',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -332,16 +337,18 @@ class ComposerStaticInit5d57b79dc2a698b20705bab91580e923
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Course' => __DIR__ . '/../..' . '/app/Course.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\Admin\\CourseController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CourseController.php',
         'App\\Http\\Controllers\\Admin\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/HomeController.php',
+        'App\\Http\\Controllers\\Admin\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RoleController.php',
+        'App\\Http\\Controllers\\Admin\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TestController.php',
+        'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-        'App\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RoleController.php',
-        'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TestController.php',
-        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
         'App\\Http\\Controllers\\Web\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Web/PageController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -355,6 +362,7 @@ class ComposerStaticInit5d57b79dc2a698b20705bab91580e923
         'App\\Http\\Requests\\PostUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostUpdateRequest.php',
         'App\\Http\\Requests\\TagStoreRequest' => __DIR__ . '/../..' . '/app/Http/Requests/TagStoreRequest.php',
         'App\\Http\\Requests\\TagUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/TagUpdateRequest.php',
+        'App\\People' => __DIR__ . '/../..' . '/app/People.php',
         'App\\Policies\\PostPolicy' => __DIR__ . '/../..' . '/app/Policies/PostPolicy.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -1786,6 +1794,8 @@ class ComposerStaticInit5d57b79dc2a698b20705bab91580e923
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'LaravelLegends\\PtBrValidator\\Validator' => __DIR__ . '/..' . '/laravellegends/pt-br-validator/src/pt-br-validator/Validator.php',
+        'LaravelLegends\\PtBrValidator\\ValidatorProvider' => __DIR__ . '/..' . '/laravellegends/pt-br-validator/src/pt-br-validator/ValidatorProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

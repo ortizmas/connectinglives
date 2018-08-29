@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    CENECTE VIDA
+                    CONECTE VIDA
                 </div>
 
                 <div class="links">
