@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('tests', 'TestController');
+//Route::resource('tests', 'TestController');
 
 Auth::routes();
 
@@ -60,22 +60,22 @@ Route::middleware(['auth'])->group(function(){
 		->middleware('permission:users.index');
 	Route::post('users/store', 'Admin\UserController@store')->name('users.store')
 		->middleware('permission:users.index');
-	Route::put('users/{user}', 'Admin\UserController@update')->name('users.update')
+	Route::get('users/{user}/edit', 'Admin\UserController@edit')->name('users.edit')
 		->middleware('permission:users.edit');
+	Route::put('users/{user}/update', 'Admin\UserController@update')->name('users.update')
+		->middleware('permission:users.edit');
+
+	Route::get('users/{user}/perfil', 'Admin\UserController@perfil')->name('users.perfil')
+		->middleware('permission:users.perfil');
+	Route::put('users/{user}', 'Admin\UserController@perfilUpdate')->name('users.perfilUpdate')
+		->middleware('permission:users.perfilUpdate');
+
 	Route::get('users/{user}', 'Admin\UserController@show')->name('users.show')
 		->middleware('permission:users.show');
 	Route::delete('users/{user}', 'Admin\UserController@destroy')->name('users.destroy')
 		->middleware('permission:users.destroy');
-	Route::get('users/{user}/edit', 'Admin\UserController@edit')->name('users.edit')
-		->middleware('permission:users.edit');
+	
 
-	//Posts
-	Route::resource('posts', 'PostController');
-	//Categories
-	Route::resource('categories', 'CategoryController');
-	//Tags
-	Route::resource('tags', 'TagController');
-        
         //Courses
 	Route::post('courses/store', 'Admin\CourseController@store')->name('courses.store')
 	->middleware('permission:courses.create');
