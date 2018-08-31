@@ -56,16 +56,16 @@ Route::middleware(['auth'])->group(function(){
 
 	Route::get('users', 'Admin\UserController@index')->name('users.index')
 		->middleware('permission:users.index');
-
+	Route::get('users/create', 'Admin\UserController@create')->name('users.create')
+		->middleware('permission:users.index');
+	Route::post('users/store', 'Admin\UserController@store')->name('users.store')
+		->middleware('permission:users.index');
 	Route::put('users/{user}', 'Admin\UserController@update')->name('users.update')
 		->middleware('permission:users.edit');
-
 	Route::get('users/{user}', 'Admin\UserController@show')->name('users.show')
 		->middleware('permission:users.show');
-
 	Route::delete('users/{user}', 'Admin\UserController@destroy')->name('users.destroy')
 		->middleware('permission:users.destroy');
-
 	Route::get('users/{user}/edit', 'Admin\UserController@edit')->name('users.edit')
 		->middleware('permission:users.edit');
 

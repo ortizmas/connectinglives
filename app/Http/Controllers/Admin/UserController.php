@@ -21,6 +21,13 @@ class UserController extends Controller
         return view('admin.users.index', compact('users'));
     }
 
+    public function create()
+    { 
+        $breadcrumb_title = 'Novo Usuario';
+        $roles = Role::get();
+        return view('admin.users.create', compact('roles', 'breadcrumb_title'));
+    }
+
 
     /**
      * Display the specified resource.
