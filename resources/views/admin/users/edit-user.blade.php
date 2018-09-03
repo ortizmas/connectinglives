@@ -18,6 +18,20 @@
                         <input name="_method" type="hidden" value="PUT">
                         @csrf
 
+                        {{-- <div class="form-group row">
+                            <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('date') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="date" type="date" class="form-control{{ $errors->has('date') ? ' is-invalid' : '' }}" name="date" value="{{ $user->date }}" required autofocus>
+
+                                @if ($errors->has('date'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('date') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div> --}}
+
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 

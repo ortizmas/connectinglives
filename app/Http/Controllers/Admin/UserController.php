@@ -116,6 +116,10 @@ class UserController extends Controller
 
     public function perfilUpdate(Request $request, User $user)
     {
+        // $date=date_create($request->get('date'));
+        // $format = date_format($date,"Y-m-d");
+        // $dataEncode = strtotime($format);
+        // $dateDecode=date('Y-m-d', $dataEncode);
         $this->validator($request->all(), $user)->validate();
         $user = User::find($user->id);
         $user->name = $request['name'];

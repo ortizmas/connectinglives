@@ -29,6 +29,23 @@ Route::get('/register-page', 'Admin\HomeController@registerPage')->name('registe
 //Rotas
 Route::middleware(['auth'])->group(function(){
 
+	//Permissions
+	Route::get('permissions', 'Admin\PermissionController@index')->name('permissions.index')
+	->middleware('permission:permissions.index');
+	Route::get('permissions/create', 'Admin\PermissionController@create')->name('permissions.create')
+	->middleware('permission:permissions.create');
+	Route::post('permissions/store', 'Admin\PermissionController@store')->name('permissions.store')
+	->middleware('permission:permissions.create');
+	Route::get('permissions/{permission}/edit', 'Admin\PermissionController@edit')->name('permissions.edit')
+	->middleware('permission:permissions.edit');
+	Route::put('permissions/{permission}', 'Admin\PermissionController@update')->name('permissions.update')
+	->middleware('permission:permissions.edit');
+	Route::get('permissions/{permission}', 'Admin\PermissionController@show')->name('permissions.show')
+	->middleware('permission:permissions.show');
+	Route::delete('permissions/{permission}', 'Admin\PermissionController@destroy')->name('permissions.destroy')
+	->middleware('permission:permissions.destroy');
+	
+
 	//Roles
 	Route::post('roles/store', 'Admin\RoleController@store')->name('roles.store')
 		->middleware('permission:roles.create');
