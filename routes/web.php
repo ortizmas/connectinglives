@@ -91,6 +91,23 @@ Route::middleware(['auth'])->group(function(){
 		->middleware('permission:users.show');
 	Route::delete('users/{user}', 'Admin\UserController@destroy')->name('users.destroy')
 		->middleware('permission:users.destroy');
+        
+         //Peoples
+	Route::post('peoples/store', 'Admin\PeopleController@store')->name('peoples.store')
+	->middleware('permission:peoples.create');
+	Route::get('peoples', 'Admin\PeopleController@index')->name('peoples.index')
+	->middleware('permission:peoples.index');
+	Route::get('peoples/create', 'Admin\PeopleController@create')->name('peoples.create')
+	->middleware('permission:peoples.create');
+	Route::put('peoples/{people}', 'Admin\PeopleController@update')->name('peoples.update')
+	->middleware('permission:peoples.edit');
+	Route::get('peoples/{people}', 'Admin\PeopleController@show')->name('peoples.show')
+	->middleware('permission:peoles.show');
+	Route::delete('peoples/{people}', 'Admin\PeopleController@destroy')->name('peoples.destroy')
+	->middleware('permission:peoples.destroy');
+	Route::get('peoples/{people}/edit', 'Admin\PeopleController@edit')->name('peoples.edit')
+	->middleware('permission:peoples.edit');
+
 	
 
         //Courses

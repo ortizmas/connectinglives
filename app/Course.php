@@ -10,6 +10,6 @@ class Course extends Model
         'cours',
         'status',
     ];
-    protected $guarded = ['id'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
     protected $table = 'courses';
 }
