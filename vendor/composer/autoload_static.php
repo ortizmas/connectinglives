@@ -112,6 +112,7 @@ class ComposerStaticInita28924ee4893d1a10d72e71915a1d254
         ),
         'B' => 
         array (
+            'Blit\\StatesAndCities\\' => 21,
             'Barryvdh\\Debugbar\\' => 18,
         ),
         'A' => 
@@ -299,6 +300,10 @@ class ComposerStaticInita28924ee4893d1a10d72e71915a1d254
         array (
             0 => __DIR__ . '/..' . '/caffeinated/shinobi/src',
         ),
+        'Blit\\StatesAndCities\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src',
+        ),
         'Barryvdh\\Debugbar\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src',
@@ -364,6 +369,7 @@ class ComposerStaticInita28924ee4893d1a10d72e71915a1d254
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\Web\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Web/PageController.php',
+        'App\\Http\\Controllers\\Web\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/Web/TestController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -419,6 +425,22 @@ class ComposerStaticInita28924ee4893d1a10d72e71915a1d254
         'Barryvdh\\Debugbar\\Twig\\Extension\\Stopwatch' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Extension/Stopwatch.php',
         'Barryvdh\\Debugbar\\Twig\\Node\\StopwatchNode' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Node/StopwatchNode.php',
         'Barryvdh\\Debugbar\\Twig\\TokenParser\\StopwatchTokenParser' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/TokenParser/StopwatchTokenParser.php',
+        'Blit\\StatesAndCities\\Http\\Controllers\\AddressesController' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Http/Controllers/AddressesController.php',
+        'Blit\\StatesAndCities\\Http\\Controllers\\Api\\V1\\CitiesApiV1Controller' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Http/Controllers/Api/V1/CitiesApiV1Controller.php',
+        'Blit\\StatesAndCities\\Http\\Controllers\\Api\\V1\\CountriesApiV1Controller' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Http/Controllers/Api/V1/CountriesApiV1Controller.php',
+        'Blit\\StatesAndCities\\Http\\Controllers\\Api\\V1\\StatesApiV1Controller' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Http/Controllers/Api/V1/StatesApiV1Controller.php',
+        'Blit\\StatesAndCities\\Http\\Controllers\\CitiesController' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Http/Controllers/CitiesController.php',
+        'Blit\\StatesAndCities\\Http\\Controllers\\CountriesController' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Http/Controllers/CountriesController.php',
+        'Blit\\StatesAndCities\\Http\\Controllers\\StatesController' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Http/Controllers/StatesController.php',
+        'Blit\\StatesAndCities\\Models\\Address' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Models/Address.php',
+        'Blit\\StatesAndCities\\Models\\City' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Models/City.php',
+        'Blit\\StatesAndCities\\Models\\Country' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Models/Country.php',
+        'Blit\\StatesAndCities\\Models\\State' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Models/State.php',
+        'Blit\\StatesAndCities\\Providers\\StatesAndCitiesServiceProvider' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Providers/StatesAndCitiesServiceProvider.php',
+        'Blit\\StatesAndCities\\Seeds\\CitiesTableSeeder' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Seeds/CitiesTableSeeder.php',
+        'Blit\\StatesAndCities\\Seeds\\CountriesTableSeeder' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Seeds/CountriesTableSeeder.php',
+        'Blit\\StatesAndCities\\Seeds\\DatabaseSeeder' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Seeds/DatabaseSeeder.php',
+        'Blit\\StatesAndCities\\Seeds\\StatesBrTableSeeder' => __DIR__ . '/..' . '/blitsoftwares/laravel-states-and-cities/src/Seeds/StatesBrTableSeeder.php',
         'Caffeinated\\Shinobi\\Facades\\Shinobi' => __DIR__ . '/..' . '/caffeinated/shinobi/src/Facades/Shinobi.php',
         'Caffeinated\\Shinobi\\Middleware\\UserHasPermission' => __DIR__ . '/..' . '/caffeinated/shinobi/src/Middleware/UserHasPermission.php',
         'Caffeinated\\Shinobi\\Middleware\\UserHasRole' => __DIR__ . '/..' . '/caffeinated/shinobi/src/Middleware/UserHasRole.php',
@@ -432,6 +454,7 @@ class ComposerStaticInita28924ee4893d1a10d72e71915a1d254
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'CidadesSeeder' => __DIR__ . '/../..' . '/database/seeds/CidadesSeeder.php',
         'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
         'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
         'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',

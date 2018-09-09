@@ -92,7 +92,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
     {{-- <script src="{{ asset('vendor/Bootstrap-Confirmation/src/popover.js') }}" defer></script> --}}
     {{-- <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js" type="text/javascript"></script>
     <script src="{{ asset('vendor/Bootstrap-Confirmation/dist/bootstrap-confirmation.min.js') }}" defer></script> --}}
