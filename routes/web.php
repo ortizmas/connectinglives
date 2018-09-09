@@ -44,9 +44,16 @@ Route::get('/ufs/', function($uf = null){
     return response()->json(\Artesaos\Cidade::select('uf')->distinct('uf')->orderBy('uf')->get());
 });
 
+
 Route::get('/cidades/{uf}', function($uf = null){
     return response()->json(\Artesaos\Cidade::where('uf', $uf)->orderBy('nome')->get());
 });
+
+Route::get('users/{user}', 'Admin\UserController@show')->name('users.show')
+	->middleware('permission:users.show');
+Route::delete('users/{user}', 'Admin\UserController@destroy')->name('users.destroy')
+	->middleware('permission:users.destroy');
+
 
 Route::get('locations', 'Web\TestController@location')->name('location.list');
 
