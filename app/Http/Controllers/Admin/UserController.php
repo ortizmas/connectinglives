@@ -42,10 +42,10 @@ class UserController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(Request $request, User $user)
     {
 
-        $this->validator($request->all())->validate();
+        $this->validator($request->all(), $user)->validate();
         $this->createUser($request->all());
 
         return redirect()->route('users.index')->with('status', 'Usuario cadastrado!!');

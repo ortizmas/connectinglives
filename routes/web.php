@@ -37,25 +37,18 @@ Route::get('buscaCep', function(){
 	return view('web.tests.busca-cep');
 });
 
-Route::get('select-anidado', function(){
-	return view('web.tests.select-anidado');
-});
-Route::get('/ufs/', function($uf = null){
-    return response()->json(\Artesaos\Cidade::select('uf')->distinct('uf')->orderBy('uf')->get());
-});
-
-
-Route::get('/cidades/{uf}', function($uf = null){
-    return response()->json(\Artesaos\Cidade::where('uf', $uf)->orderBy('nome')->get());
-});
-
-Route::get('users/{user}', 'Admin\UserController@show')->name('users.show')
-	->middleware('permission:users.show');
-Route::delete('users/{user}', 'Admin\UserController@destroy')->name('users.destroy')
-	->middleware('permission:users.destroy');
-
-
 Route::get('locations', 'Web\TestController@location')->name('location.list');
+
+//Route::resource('countries','CountriesController');
+Route::get('countries-list','Admin\CountryController@getList');
+
+//Route::resource('states','StatesController');
+Route::get('states-list/{country_id}','Admin\StateController@getList');
+
+//Route::resource('cities','CitiesController');
+Route::get('cities-list/{state_id}','Admin\CityController@getList');
+
+//Route::resource('addresses','AddressesController');
 
 //Rotas para administrador do sistema
 Route::middleware(['auth'])->group(function(){

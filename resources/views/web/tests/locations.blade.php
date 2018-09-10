@@ -22,9 +22,6 @@
                         <select name="country_id" id="country" data-default="{{ config('states-and-cities.default-country') }}"></select>
                         <select name="state_id" id="state" data-default="{{ config('states-and-cities.default-state') }}"></select>
                         <select name="city_id" id="city" data-default="{{ config('states-and-cities.default-city') }}"></select>
-
-                        {{ $france }}
-
                   </form>
                 </div>
             </div>

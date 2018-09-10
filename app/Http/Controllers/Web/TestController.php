@@ -45,8 +45,6 @@ class TestController extends Controller
 
     public function location()
     {
-		dd('tes');
-    	//$france = Countries::where('name.common', 'France');
-    	return view('web.tests.locations', compact('fance'));
+    	return view('web.tests.locations');
     }
 }

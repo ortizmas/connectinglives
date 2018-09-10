@@ -50,7 +50,6 @@ return array(
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Caffeinated\\Shinobi\\' => array($vendorDir . '/caffeinated/shinobi/src'),
-    'Blit\\StatesAndCities\\' => array($vendorDir . '/blitsoftwares/laravel-states-and-cities/src'),
     'Barryvdh\\Debugbar\\' => array($vendorDir . '/barryvdh/laravel-debugbar/src'),
     'App\\' => array($baseDir . '/app'),
 );

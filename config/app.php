@@ -151,7 +151,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Blit\StatesAndCities\Providers\StatesAndCitiesServiceProvider::class,
+        
         /*
          * Application Service Providers...
          */
