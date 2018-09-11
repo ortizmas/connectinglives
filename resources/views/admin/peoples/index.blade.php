@@ -46,7 +46,7 @@
                             @foreach ($peoples as $people)
                                 <tr>
                                     <th scope="row">{{ $people->id }}</th>
-                                    <td>{{ $people->name }}</td>
+                                    <td>{{ $people->full_name }}</td>
                                     <td>{{ $people->cpf }}</td>
                                     <td>{{ $people->email }}</td>
                                     {{-- <td>{{ $people->data_of_birth }}</td> --}}

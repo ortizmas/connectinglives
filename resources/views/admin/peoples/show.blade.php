@@ -15,7 +15,7 @@
                         </div>
                     @endif
 
-                    <p><strong>Nome: </strong>{{ $people->cours }}</p>
+                    <p><strong>Nome: </strong>{{ $people->full_name }}</p>
                     <p><strong>CPF: </strong>{{ $people->cpf }}</p>
                     <p><strong>Data de Nascimento: </strong>{{ $people->data_of_birth }}</p>
                     <p><strong>Telefone: </strong>{{ $people->phone }}</p>

@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Address;
 use App\People;
+use App\Course;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Auth;
+use Validator;
+use Illuminate\Validation\Rule;
+
 
 class PeopleController extends Controller
 {
@@ -16,162 +22,61 @@ class PeopleController extends Controller
     public function index()
     {
         $peoples = People::paginate();
+
     	return view('admin.peoples.index', compact('peoples'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('admin.peoples.create', compact('peoples'));
+        $cursos = Course::get()->pluck('name', 'id');
+        $address = Address::find(1)->first();
+        return view('admin.peoples.create', compact('peoples', 'cursos', 'address'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, People $peoples)
+    public function store(Request $request, People $people)
     {
-     $messages = [
-       'required' => 'O campo ":attribute" é obrigatório!',
-       'email.unique' => 'Este email já está cadastrado!',
-       'cpf.unique' => 'Este CPF já está cadastrado!',
-       'numeric' => 'O campo ":attribute" deve ser um número!',
-       'min' => 'O campo ":attribute" deve ter no mínimo :min caracteres!',
-       'max' => 'O campo ":attribute" deve ter no maximo :max caracteres!',
-       'type.required' => 'O campo "tipo" é obrigatório!',
-       'unique' => 'Este ":attribute" já se encontra cadastrado no sistema!',
-        'cpf'=> 'Esse cpf é inválido!',
-       
-     ];
 
-     $validator = \Validator::make($request->all(), [
-      'email' => [
-        'bail',
-        'required',
-        'max:255',
-        
-      ], 
-      'cpf' => [
-        'bail',
-        'required',
-         
-        'max:14',
-         ], 
-      'name'    =>'required|min:3|max:100',           
-      'data_of_birth' => 'required|date',
-      'phone'   =>'required',
-      'cep'     =>'required',
-      'state_id'   =>'required',
-      'city_id' =>'required',
-      'street'  =>'required',
-      'number'  =>'required',
-      'neighborhood' =>'required',
-      'complement'   =>'required',
-      'status'  =>'required'
-    ], $messages);
+        //Validation
+        $this->validator($request->all(), $people)->validate();
 
-     if ($validator->fails()) {
+        $request['user_id'] = Auth::id();
+        $request['course_id'] = 1;
+        $request['city_id'] = 1;
 
-      return redirect()->back()
-      ->withErrors($validator)
-      ->withInput();
 
-    }
-
-      $people = People::create($request->all());
-
-      return redirect()->route('peoples.edit', $people->id)->with('status', 'Pessoa cadastrada com sucesso');
+        $people = People::create($request->all());
+        return redirect()->route('peoples.edit', $people->id)->with('status', 'Pessoa cadastrada com sucesso');
     
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\People  $people
-     * @return \Illuminate\Http\Response
-     */
     public function show(People $people)
     {
         return view('admin.peoples.show', compact('people'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\People  $people
-     * @return \Illuminate\Http\Response
-     */
     public function edit(People $people)
     {
-        return view('admin.peoples.edit', compact('people'));
+        $cursos = Course::get()->pluck('name', 'id');
+        $address = Address::find(1)->first();
+        return view('admin.peoples.edit', compact('people', 'cursos', 'address'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\People  $people
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, People $people)
     {
-        $messages = [
-       'required' => 'O campo ":attribute" é obrigatório!',
-       'email.unique' => 'Este email já está cadastrado!',
-       'cpf.unique' => 'Este CPF já está cadastrado!',
-       'numeric' => 'O campo ":attribute" deve ser um número!',
-       'min' => 'O campo ":attribute" deve ter no mínimo :min caracteres!',
-       'max' => 'O campo ":attribute" deve ter no maximo :max caracteres!',
-       'type.required' => 'O campo "tipo" é obrigatório!',
-       'unique' => 'Este ":attribute" já se encontra cadastrado no sistema!',
-        'cpf'=> 'Esse cpf é inválido!',
-       
-     ];
+        $people = People::findOrFail($people->id);
 
-     $validator = \Validator::make($request->all(), [
-      'email' => [
-        'bail',
-        'required',
-        'max:255',
-       
-      ], 
-      'cpf' => [
-        'bail',
-        'required',
-          
-        'max:14',
-       
-      ], 
-      'name'    =>'required|min:3|max:100',           
-      'data_of_birth' => 'required|date',
-      'phone'   =>'required',
-      'cep'     =>'required',
-      'state_id'   =>'required',
-      'city_id' =>'required',
-      'street'  =>'required',
-      'number'  =>'required',
-      'neighborhood' =>'required',
-      'complement'   =>'required',
-      'status'  =>'required'
-    ], $messages);
+        //Validation
+        $this->validator($request->all(), $people)->validate();
 
-     if ($validator->fails()) {
+        $input = $request->all();
+        $input['user_id'] = Auth::id();
+        $input['course_id'] = 1;
+        $input['city_id'] = 1;
 
-      return redirect()->back()
-      ->withErrors($validator)
-      ->withInput();
-
-    }
-
-      $people = People::create($request->all());
-
-      return redirect()->route('peoples.edit', $people->id)->with('status', 'Pessoa cadastrada com sucesso');
+        $people->fill($input)->save();
+        
+        //$people = People::create($request->all());
+        return redirect()->route('peoples.edit', $people->id)->with('status', 'Pessoa alterado com sucesso');
     
     }
 
@@ -187,5 +92,55 @@ class PeopleController extends Controller
 
       return back()->with('status', 'Essa pessoa foi excluida');
     
+    }
+
+    public function validator(array $data, $people)
+    {
+        $messages = [
+           'required' => 'O campo ":attribute" é obrigatório!',
+           'email.required' => 'O E-mail é obrigatório!',
+           'email.unique' => 'Este email já está cadastrado!',
+           'cpf.unique' => 'Este CPF já está cadastrado!',
+           'numeric' => 'O campo ":attribute" deve ser um número!',
+           'min' => 'O campo ":attribute" deve ter no mínimo :min caracteres!',
+           'max' => 'O campo ":attribute" deve ter no maximo :max caracteres!',
+           'type.required' => 'O campo "tipo" é obrigatório!',
+           'unique' => 'Este ":attribute" já se encontra cadastrado no sistema!',
+            'cpf'=> 'Esse cpf é inválido!',
+           
+        ];
+
+        $validator = Validator::make($data, [
+          'email' => [
+            'bail','required','max:255','email',
+            Rule::unique('peoples')->ignore($people->id),
+            
+          ], 
+          'cpf' => [
+            'bail',
+            'required',
+             
+            'max:14',
+             ], 
+          'full_name'    =>'required|min:3|max:100',           
+          'data_of_birth' => 'required|date',
+          'phone'   =>'required',
+          //'cep'     =>'required',
+          // 'state_id'   =>'required',
+          // 'city_id' =>'required',
+          // 'street'  =>'required',
+          // 'number'  =>'required',
+          // 'neighborhood' =>'required',
+          // 'complement'   =>'required',
+          //'status'  =>'required'
+        ], $messages);
+
+        return $validator;
+        
+        // if ($validator->fails()) {
+        //     return redirect()->back()
+        //         ->withErrors($validator)
+        //         ->withInput();
+        // }
     }
 }

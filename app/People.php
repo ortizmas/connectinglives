@@ -1,31 +1,26 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class People extends Model
 {
     protected $fillable = [
         'user_id',
-        'name',
+        'full_name',
         'email',
         'cpf',
         'data_of_birth',
         'phone',
         'cep',
-        'state_id',
         'course_id',
         'city_id',
-        'street',
-        'number',
-        'neighborhood',
-        'complement',
         'situation',
         'status',
     ];
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $table = 'courses';
+    protected $table = 'peoples';
     protected $data_of_birth = 'Y-m-d';
     
     public function user()
@@ -46,4 +41,9 @@ class People extends Model
     {
     	return $this->belongsTo(Course::class);
     }
+
+    // public function setUserIdAttribute()
+    // {
+    //     $this->attributes['user_id'] = Auth::user()->id;
+    // }
 }
