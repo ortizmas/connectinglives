@@ -34,8 +34,15 @@
 	</div>
 	<div class="col-md">
 		<div class="form-group">
-			{{ Form::label('curso', 'Curso') }}
+			{{ Form::label('course_id', 'Curso') }}
 			{{ Form::select('course_id', $cursos, null, ['class' => 'form-control', 'placeholder' => ' -- Selecione seu Curso -- ']) }}
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="form-group">
+			{{ Form::label('status', 'Status') }}
+			{{ Form::select('status', [1 => 'Ativo', 0 => 'Inativo'], null, ['class' => 'form-control']) }}
 		</div>
 	</div>
 </div>

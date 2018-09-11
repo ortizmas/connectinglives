@@ -42,11 +42,12 @@ class PeopleController extends Controller
         $this->validator($request->all(), $people)->validate();
 
         $request['user_id'] = Auth::id();
-        $request['course_id'] = 1;
-        $request['city_id'] = 1;
-
-
         $people = People::create($request->all());
+
+        $input = $request->all();
+        $input['people_id'] = $people->id;
+        Address::create($input);
+
         return redirect()->route('peoples.edit', $people->id)->with('status', 'Pessoa cadastrada com sucesso');
     
     }

@@ -12,9 +12,7 @@ class People extends Model
         'cpf',
         'data_of_birth',
         'phone',
-        'cep',
         'course_id',
-        'city_id',
         'situation',
         'status',
     ];
