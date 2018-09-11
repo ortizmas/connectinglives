@@ -29,8 +29,10 @@ class PeopleController extends Controller
     public function create()
     {
         $cursos = Course::get()->pluck('name', 'id');
-        $address = Address::find(1)->first();
-        return view('admin.peoples.create', compact('peoples', 'cursos', 'address'));
+        //$address = Address::find(1)->first();
+        $address = Address::get();
+        $method = 'CREATE';
+        return view('admin.peoples.create', compact('peoples', 'cursos', 'address', 'method'));
     }
 
     public function store(Request $request, People $people)
