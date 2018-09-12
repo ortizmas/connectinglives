@@ -5,12 +5,18 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Pessoas</div>
+                <div class="card-header">
+                    Cadastrar dados da Pessoa
+                    <a href="{{ route('peoples.index') }}" title="Voltar" class="btn btn-warning float-right">Voltar</a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     @endif
                     @if ($errors->any())

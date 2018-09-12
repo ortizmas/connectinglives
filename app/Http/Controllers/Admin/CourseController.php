@@ -39,7 +39,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $courses = Course::create($request->all());
-        return redirect()->route('courses.edit', $courses->id);
+        return redirect()->route('courses.edit', $courses->id)->with('status', 'Curso salvado com sucesso!!');
     }
 
     /**
@@ -75,7 +75,7 @@ class CourseController extends Controller
     {
         $course->update($request->all());
         return redirect()->route('courses.index', $course->id)
-        ->with('status', 'Editado com sucesso');
+        ->with('status', 'Curso alterado com sucesso');
     }
 
     /**

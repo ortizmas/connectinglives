@@ -8,6 +8,7 @@ class Address extends Model {
 
     protected $fillable = [
         'city_id',
+        'people_id',
         'name',
         'street',
         'number',
@@ -19,6 +20,12 @@ class Address extends Model {
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+
+    //Uma usuario pode ter n quantidade de post 
+    public function peoples()
+    {
+        return $this->hasMany(People::class);
     }
 
 }

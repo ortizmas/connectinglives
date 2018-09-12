@@ -12,9 +12,7 @@ class People extends Model
         'cpf',
         'data_of_birth',
         'phone',
-        'cep',
         'course_id',
-        'city_id',
         'situation',
         'status',
     ];
@@ -37,9 +35,15 @@ class People extends Model
     {
     	return $this->belongsTo(City::class);
     }
+
     public function course()
     {
     	return $this->belongsTo(Course::class);
+    }
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
     }
 
     // public function setUserIdAttribute()

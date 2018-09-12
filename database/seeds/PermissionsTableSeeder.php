@@ -70,33 +70,95 @@ class PermissionsTableSeeder extends Seeder
 
         //Produtos
         Permission::create([
-        	'name' => 'Navegar products',
-        	'slug' => 'products.index',
-        	'description' => 'Lista e navega todos os products do sistema',
+        	'name' => 'Navegar permissions',
+        	'slug' => 'permissions.index',
+        	'description' => 'Lista e navega todos os permissions do sistema',
         ]);
 
         Permission::create([
-        	'name' => 'Ver detalhes do products',
-        	'slug' => 'products.show',
+        	'name' => 'Ver detalhes do permissions',
+        	'slug' => 'permissions.show',
         	'description' => 'Ver em detalhe cada produto do sistema',
         ]);
 
         Permission::create([
-        	'name' => 'Alterar products',
-        	'slug' => 'products.create',
+        	'name' => 'Alterar permissions',
+        	'slug' => 'permissions.create',
         	'description' => 'Editar qualquer dado de um produto do sistema',
         ]);
 
         Permission::create([
-        	'name' => 'Alterar products',
-        	'slug' => 'products.edit',
+        	'name' => 'Alterar permissions',
+        	'slug' => 'permissions.edit',
         	'description' => 'Editar qualquer dado de um produto do sistema',
         ]);
 
         Permission::create([
-        	'name' => 'Excluir products',
-        	'slug' => 'products.destroy',
+        	'name' => 'Excluir permissions',
+        	'slug' => 'permissions.destroy',
         	'description' => 'Excluir qualquer produto do sistema',
+        ]);
+
+        //Peoples
+        Permission::create([
+            'name' => 'Navegar peoples',
+            'slug' => 'peoples.index',
+            'description' => 'Lista e navega todos os peoples do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Ver detalhes do peoples',
+            'slug' => 'peoples.show',
+            'description' => 'Ver em detalhe cada produto do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Alterar peoples',
+            'slug' => 'peoples.create',
+            'description' => 'Editar qualquer dado de um produto do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Alterar peoples',
+            'slug' => 'peoples.edit',
+            'description' => 'Editar qualquer dado de um produto do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Excluir peoples',
+            'slug' => 'peoples.destroy',
+            'description' => 'Excluir qualquer produto do sistema',
+        ]);
+
+        //Courses
+        Permission::create([
+            'name' => 'Navegar courses',
+            'slug' => 'courses.index',
+            'description' => 'Lista e navega todos os courses do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Ver detalhes do courses',
+            'slug' => 'courses.show',
+            'description' => 'Ver em detalhe cada produto do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Alterar courses',
+            'slug' => 'courses.create',
+            'description' => 'Editar qualquer dado de um produto do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Alterar courses',
+            'slug' => 'courses.edit',
+            'description' => 'Editar qualquer dado de um produto do sistema',
+        ]);
+
+        Permission::create([
+            'name' => 'Excluir courses',
+            'slug' => 'courses.destroy',
+            'description' => 'Excluir qualquer produto do sistema',
         ]);
     }
 }

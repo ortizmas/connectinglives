@@ -57,9 +57,8 @@
                                     <td>{{ $people->number }}</td>
                                     <td>{{ $people->neighborhood }}</td>
                                     <td>{{ $people->complement }}</td> --}}
-                                    <td>{{ $people->course_id }}</td>
-                                    <td>{{ $people->situation }}</td>
-                                    <td>{{ $people->status }}</td>
+                                    {{-- <td>{{ $people->course->name }}</td> --}}
+                                    <td>{{ ($people->status == 1) ? 'Ativo' : 'Inativo' }}</td>
                                     <td>
                                         @can('peoples.show', Model::class)
                                             <a href="{{ route('peoples.show', $people->id) }}" class="btn btn-outline-success btn-sm">Ver</a>
@@ -80,9 +79,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                    </table>
-
-                   
+                    </table>                   
                 </div>
             </div>
         </div>

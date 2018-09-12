@@ -17,6 +17,9 @@
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
                     @endif
                     
@@ -33,7 +36,7 @@
                             @foreach ($courses as $course)
                                 <tr>
                                     <th scope="row">{{ $course->id }}</th>
-                                    <td>{{ $course->cours }}</td>
+                                    <td>{{ $course->name }}</td>
                                     <td>{{ $course->status }}</td>
                                     <td>
                                         @can('courses.show', Model::class)
