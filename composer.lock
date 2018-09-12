@@ -8,23 +8,23 @@
     "packages": [
         {
             "name": "caffeinated/shinobi",
-            "version": "v3.2.1",
+            "version": "v3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caffeinated/shinobi.git",
-                "reference": "c474f82b4e530248198b6b217a36d25b2444d1fe"
+                "reference": "9b5e60f1b59a57ffe6f8a938ff9f896dc3075a54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caffeinated/shinobi/zipball/c474f82b4e530248198b6b217a36d25b2444d1fe",
-                "reference": "c474f82b4e530248198b6b217a36d25b2444d1fe",
+                "url": "https://api.github.com/repos/caffeinated/shinobi/zipball/9b5e60f1b59a57ffe6f8a938ff9f896dc3075a54",
+                "reference": "9b5e60f1b59a57ffe6f8a938ff9f896dc3075a54",
                 "shasum": ""
             },
             "require": {
-                "illuminate/config": "5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/database": "5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/filesystem": "5.3.*|5.4.*|5.5.*|5.6.*",
-                "illuminate/support": "5.3.*|5.4.*|5.5.*|5.6.*",
+                "illuminate/config": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "illuminate/database": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "illuminate/filesystem": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
+                "illuminate/support": "5.3.*|5.4.*|5.5.*|5.6.*|5.7.*",
                 "php": ">=5.6.4"
             },
             "require-dev": {
@@ -70,7 +70,7 @@
                 "roles",
                 "shinobi"
             ],
-            "time": "2018-05-17T17:16:25+00:00"
+            "time": "2018-09-11T17:30:07+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1442,16 +1442,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.1.2",
+            "version": "v6.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8"
+                "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
-                "reference": "7d760881d266d63c5e7a1155cbcf2ac656a31ca8",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8ddcb66ac10c392d3beb54829eef8ac1438595f4",
+                "reference": "8ddcb66ac10c392d3beb54829eef8ac1438595f4",
                 "shasum": ""
             },
             "require": {
@@ -1497,7 +1497,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2018-07-13T07:04:35+00:00"
+            "time": "2018-09-11T07:12:52+00:00"
         },
         {
             "name": "symfony/console",
@@ -2594,16 +2594,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "181c4502d8f34db7aed7bfe88d4f87875b8e947a"
+                "reference": "e79cd403fb77fc8963a99ecc30e80ddd885b3311"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/181c4502d8f34db7aed7bfe88d4f87875b8e947a",
-                "reference": "181c4502d8f34db7aed7bfe88d4f87875b8e947a",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/e79cd403fb77fc8963a99ecc30e80ddd885b3311",
+                "reference": "e79cd403fb77fc8963a99ecc30e80ddd885b3311",
                 "shasum": ""
             },
             "require": {
@@ -2622,7 +2622,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
@@ -2651,7 +2651,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2018-03-03T17:56:25+00:00"
+            "time": "2018-06-30T13:14:06+00:00"
         },
         {
             "name": "fzaninotto/faker",
@@ -3557,16 +3557,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.3.4",
+            "version": "7.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "0356331bf62896dc56e3a15030b23b73f38b2935"
+                "reference": "7b331efabbb628c518c408fdfcaf571156775de2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0356331bf62896dc56e3a15030b23b73f38b2935",
-                "reference": "0356331bf62896dc56e3a15030b23b73f38b2935",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7b331efabbb628c518c408fdfcaf571156775de2",
+                "reference": "7b331efabbb628c518c408fdfcaf571156775de2",
                 "shasum": ""
             },
             "require": {
@@ -3637,7 +3637,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-09-05T09:58:53+00:00"
+            "time": "2018-09-08T15:14:29+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
