@@ -35,7 +35,7 @@
                             @foreach($data as $obj)
                             <tr>
                                 <td>{{ $obj->id }}</td>
-                                <td>{{ trans('countries.country.'.$obj->name) }}</td>
+                                <td>{{ trans('countries.country.'. $obj->name) }}</td>
                                 <td>{{ $obj->code_iso2 }}</td>
                                 <td>{{ $obj->code_iso3 }}</td>
                                 <td>{{ $obj->code_phone }}</td>

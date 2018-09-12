@@ -22,7 +22,7 @@
                                     @foreach ($countries as $country)
                                     <option value="{{ $country->id }}">{{ $country->name }}</option>
                                     @endforeach
-                                    <option value="{{ $state->country->name }}" selected="">{{ $state->country->name }}</option>
+                                    <option value="{{ $state->country->id }}" selected="">{{ $state->country->name }}</option>
                                 </select>
                             </div>
                         </div>

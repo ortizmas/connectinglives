@@ -31,6 +31,7 @@ return [
 
     'country' => [
         'Brazil' => 'Brasil',
+        'Peru' => 'Peru',
     ]
 
 ];
