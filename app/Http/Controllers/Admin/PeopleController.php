@@ -126,7 +126,7 @@ class PeopleController extends Controller
         $validator = Validator::make($data, [
             'full_name'    =>'required|min:3|max:100', 
             'email' => ['bail','required','max:255','email',Rule::unique('peoples')->ignore($people->id)], 
-            'cpf' => ['bail','required','max:14'],   
+            'cpf' => ['bail','required', 'cpf','max:14'],   
             'data_of_birth' => 'required|date',
             'phone'   =>'required',
             'postal_code'     =>'required',
