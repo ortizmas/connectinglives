@@ -149,3 +149,19 @@ Route::get('addresses/{address}', 'Admin\AddressController@show')->name('address
 ->middleware('permission:peoles.show');
 Route::delete('addresses/{address}', 'Admin\AddressController@destroy')->name('addresses.destroy')
 ->middleware('permission:addresses.destroy');
+
+//Psicologos
+Route::get('psychologists', 'Admin\PsychologistController@index')->name('psychologists.index')
+->middleware('permission:psychologists.index');
+Route::get('psychologists/create', 'Admin\PsychologistController@create')->name('psychologists.create')
+->middleware('permission:psychologists.create');
+Route::post('psychologists/store', 'Admin\PsychologistController@store')->name('psychologists.store')
+->middleware('permission:psychologists.create');
+Route::get('psychologists/{psychologist}/edit', 'Admin\PsychologistController@edit')->name('psychologists.edit')
+->middleware('permission:psychologists.edit');
+Route::put('psychologists/{psychologist}', 'Admin\PsychologistController@update')->name('psychologists.update')
+->middleware('permission:psychologists.edit');
+Route::get('psychologists/{psychologist}', 'Admin\PsychologistController@show')->name('psychologists.show')
+->middleware('permission:psychologists.show');
+Route::delete('psychologists/{psychologists}', 'Admin\PsychologistController@destroy')->name('psychologists.destroy')
+->middleware('permission:psychologists.destroy');
