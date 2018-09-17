@@ -2,7 +2,7 @@
     <div class="col-md">
 		<div class="form-group">
 			{{ Form::label('people_id', 'Nome') }}
-			{{ Form::select('people_id',$people, null, ['class' => 'form-control']) }}
+			{{ Form::select('people_id',$pessoas, null, ['class' => 'form-control', 'placeholder' => ' -- Selecione o usuário -- ']) }}
 		</div>
 	</div>
 	<div class="col-md">
@@ -23,9 +23,22 @@
 			{{ Form::text('public', null, ['class' => 'form-control']) }}
 		</div>
 	</div>
+        
 </div>
 
 <div class="row">
+    <div class="col-md">
+		<div class="form-group">
+			{{ Form::label('specialties_id', 'Especialidades') }}
+			{{ Form::select('specialties_id',$especialidades, null, ['class' => 'form-control', 'placeholder' => ' -- Selecione sua especialidade -- ']) }}
+		</div>
+	</div>
+    <div class="col-md">
+		<div class="form-group">
+			{{ Form::label('levels_id', 'Nível') }}
+			{{ Form::select('levels_id',$niveis, null, ['class' => 'form-control','placeholder' => ' -- Selecione seu nível -- ']) }}
+		</div>
+	</div>
 	
 	<div class="col-md">
 		<div class="form-group">

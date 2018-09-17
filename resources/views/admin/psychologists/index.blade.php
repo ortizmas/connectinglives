@@ -38,13 +38,13 @@
                             @foreach ($psychologists as $psychologist)
                                 <tr>
                                     <th scope="row">{{ $psychologist->id }}</th>
-                                    <td>{{ $psychologist->people->name }}</td>
+                                    <td>{{ $psychologist->people->full_name }}</td>
                                     <td>{{ $psychologist->crp }}</td>
                                     <td>{{ $psychologist->therapeutic_approach }}</td>
-                                    <td>{{ $psychologist->specialties }}</td>
+                                    <td>{{ $psychologist->specialties_id }}</td>
                                     <td>{{ $psychologist->public }}</td>
                                    
-                                    <td>{{ $psychologist->level }}</td>
+                                    <td>{{ $psychologist->levels_id }}</td>
                                     
                                     <td>{{ ($psychologist->status == 1) ? 'Ativo' : 'Inativo' }}</td>
                                     <td>
@@ -54,7 +54,7 @@
                                     </td>
                                     <td>
                                         @can('psychologists.edit', Model::class)
-                                            <a href="{{ route('psychologists.edit', $people->id) }}" class="btn btn-outline-info btn-sm">Alterar</a>
+                                            <a href="{{ route('psychologists.edit', $psychologist->id) }}" class="btn btn-outline-info btn-sm">Alterar</a>
                                         @endcan
                                     </td>
                                     <td>
@@ -67,7 +67,8 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                    </table>                   
+                    </table>  
+                    {{ $psychologists->render() }}
                 </div>
             </div>
         </div>

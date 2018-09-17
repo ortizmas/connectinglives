@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use App\People;
+use App\Specialtie;
+use App\Level;
 
 class PsychologistController extends Controller
 {
@@ -30,11 +32,12 @@ class PsychologistController extends Controller
      */
     public function create()
     {
-       // $especialidades = Specialtie::get()->pluck('name', 'id');
-        
-        //$niveis = Level::get();
+      
+        $pessoas = People::get()->pluck('full_name', 'id');
+        $especialidades = Specialtie::get()->pluck('name', 'id');
+        $niveis = Level::get()->pluck('academic_level','id');
         $method = 'CREATE';
-        return view('admin.psychologists.create', compact('psychologists', 'especialidades','niveis', 'method'));
+        return view('admin.psychologists.create', compact('psychologists', 'pessoas', 'especialidades','niveis','method'));
    
     }
 
@@ -49,11 +52,9 @@ class PsychologistController extends Controller
         //Validation
         $this->validator($request->all(), $psychologist)->validate();
 
-        $request['people_id'] = People::id();
+        
         $psychologist = Psychologist::create($request->all());
 
-        $input = $request->all();
-        $input['psychologist_id'] = $psychologist->id;
         
 
         return redirect()->route('psychologists.edit', $psychologist->id)->with('status', 'Psicólogo cadastrado com sucesso');
@@ -84,9 +85,10 @@ class PsychologistController extends Controller
     public function edit(Psychologist $psychologist)
     {
         $method = 'EDIT';
-       // $especialidades = Specialties::get()->pluck('name', 'id');
-       // $niveis = Level::where('psychologist_id', $psychologist->id)->first();
-        return view('admin.psychologists.edit', compact('psychologist', 'especialidades', 'niveis', 'method'));
+        $pessoas = People::get()->pluck('full_name', 'id');
+        $especialidades = Specialtie::get()->pluck('name', 'id');
+        $niveis = Level::get()->pluck('academic_level','id');
+        return view('admin.psychologists.edit', compact('psychologist', 'pessoas','especialidades','niveis', 'method'));
  
     }
 
@@ -99,16 +101,16 @@ class PsychologistController extends Controller
      */
     public function update(Request $request, Psychologist $psychologist)
     {
-        $psychologist = Psychologist::findOrFail($psychologist->id);
+       
 
         //Validation
         $this->validator($request->all(), $psychologist)->validate();
 
         $input = $request->all();
-        $input['people_id'] = People::id();
+        
         $psychologist->fill($input)->save();
         
-       // $niveisId = Level::where('psychologist_id', $psychologist->id)->select('id')->first();
+       //$niveisId = Level::where('psychologist_id', $psychologist->id)->select('id')->first();
        // $niveis = Level::findOrFail($niveisId->id);
        // $niveis->fill($input)->save();
         return redirect()->route('psychologists.edit', $psychologist->id)->with('status', 'Psicólogo alterado com sucesso');

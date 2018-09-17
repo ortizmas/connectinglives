@@ -165,3 +165,35 @@ Route::get('psychologists/{psychologist}', 'Admin\PsychologistController@show')-
 ->middleware('permission:psychologists.show');
 Route::delete('psychologists/{psychologists}', 'Admin\PsychologistController@destroy')->name('psychologists.destroy')
 ->middleware('permission:psychologists.destroy');
+
+//Especialidades
+Route::get('specialties', 'Admin\SpecialtieController@index')->name('specialties.index')
+->middleware('permission:specialties.index');
+Route::get('specialties/create', 'Admin\SpecialtieController@create')->name('specialties.create')
+->middleware('permission:specialties.create');
+Route::post('specialties/store', 'Admin\SpecialtieController@store')->name('specialties.store')
+->middleware('permission:specialties.create');
+Route::get('specialties/{specialtie}/edit', 'Admin\SpecialtieController@edit')->name('specialties.edit')
+->middleware('permission:specialties.edit');
+Route::put('specialties/{specialtie}', 'Admin\SpecialtieController@update')->name('specialties.update')
+->middleware('permission:specialties.edit');
+Route::get('specialties/{specialtie}', 'Admin\SpecialtieController@show')->name('specialties.show')
+->middleware('permission:specialties.show');
+Route::delete('specialties/{specialtie}', 'Admin\SpecialtieController@destroy')->name('specialties.destroy')
+->middleware('permission:specialties.destroy');
+
+//Níveis
+Route::get('levels', 'Admin\LevelController@index')->name('levels.index')
+->middleware('permission:levels.index');
+Route::get('levels/create', 'Admin\LevelController@create')->name('levels.create')
+->middleware('permission:levels.create');
+Route::post('levels/store', 'Admin\LevelController@store')->name('levels.store')
+->middleware('permission:levels.create');
+Route::get('levels/{level}/edit', 'Admin\LevelController@edit')->name('levels.edit')
+->middleware('permission:levels.edit');
+Route::put('levels/{level}', 'Admin\LevelController@update')->name('levels.update')
+->middleware('permission:levels.edit');
+Route::get('levels/{level}', 'Admin\LevelController@show')->name('levels.show')
+->middleware('permission:levels.show');
+Route::delete('levels/{level}', 'Admin\LevelController@destroy')->name('levels.destroy')
+->middleware('permission:levels.destroy');
