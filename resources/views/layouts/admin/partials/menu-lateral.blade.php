@@ -94,6 +94,30 @@
                 @endcan
             </ul>
         </li>
+
+        <li>
+            <a href="#DropdownMenu_5" aria-expanded="false" data-toggle="collapse"> 
+                <i class="icon-interface-windows"></i>
+                Modulo do Psicologo 
+            </a>
+            <ul id="DropdownMenu_5" class="collapse list-unstyled ">
+                @can('psychologists.index')
+                    <li>
+                        <a class="nav-link" href="{{ url('/psychologists') }}">Psicologos</a>
+                    </li>
+                @endcan
+                @can('specialties.index')
+                    <li>
+                        <a class="nav-link" href="{{ url('/specialties') }}">Especialidades</a>
+                    </li>
+                @endcan
+                @can('levels.index')
+                    <li>
+                        <a class="nav-link" href="{{ url('/levels') }}">Niveis</a>
+                    </li>
+                @endcan
+            </ul>
+        </li>
         {{-- <li><a href="/tables"> <i class="icon-grid"></i>Tables </a></li>
         <li><a href="/charts"> <i class="fa fa-bar-chart"></i>Charts </a></li>
         <li><a href="/forms"> <i class="icon-padnote"></i>Forms </a></li>

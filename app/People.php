@@ -46,6 +46,11 @@ class People extends Model
         return $this->hasOne(Address::class);
     }
 
+    public function psychologists()
+    {
+        return $this->hasOne(Psychologist::class);
+    }
+
     // public function setUserIdAttribute()
     // {
     //     $this->attributes['user_id'] = Auth::user()->id;

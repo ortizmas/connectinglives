@@ -14,4 +14,11 @@ class Level extends Model
     protected $guarded = ['id'];
     protected $table = 'levels';
     public $timestamps = false;
+
+    public function psychologists()
+    {
+        return $this->hasOne(Psychologist::class);
+    }
 }
+
+

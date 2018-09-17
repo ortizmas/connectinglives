@@ -23,7 +23,7 @@ class Address extends Model {
     }
 
     //Uma usuario pode ter n quantidade de post 
-    public function peoples()
+    public function people()
     {
         return $this->hasMany(People::class);
     }

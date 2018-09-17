@@ -30,7 +30,7 @@ class Psychologist extends Model
     	return $this->belongsTo(Level::class);
     }
 
-    public function specialtie()
+    public function specialty()
     {
     	return $this->belongsTo(Specialtie::class);
     }

@@ -14,4 +14,10 @@ class Specialtie extends Model
     protected $guarded = ['id'];
     protected $table = 'specialties';
     public $timestamps = false;
+
+    public function psychologists()
+    {
+        return $this->hasOne(Psychologist::class);
+    }
+
 }

@@ -12,12 +12,12 @@
                 
                
                 <div class="card-body">
-                    <p><strong>Nome: </strong>{{ $psychologist->people->name }}</p>
+                    <p><strong>Nome: </strong>{{ $psychologist->people->full_name }}</p>
                     <p><strong>CRP: </strong>{{ $psychologist->crp }}</p>
                     <p><strong>Abordagem Psicoterapeutica: </strong>{{ $psychologist->therapeutic_approach }}</p>
-                    <p><strong>Especialidades: </strong>{{ $psychologist->specialties }}</p>
+                    <p><strong>Especialidades: </strong>{{ $psychologist->specialty->name }}</p>
                     <p><strong>Público: </strong>{{ $psychologist->public }}</p>
-                    <p><strong>Nível: </strong>{{ $psychologist->level }}</p>
+                    <p><strong>Nível: </strong>{{ $psychologist->level->academic_level }}</p>
                     <p><strong>Status: </strong>{{ ($psychologist->status == 1) ? 'Ativo' : 'Inativo' }}</p>
                 </div>
             </div>

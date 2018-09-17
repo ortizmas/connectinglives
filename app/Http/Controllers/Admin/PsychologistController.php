@@ -123,11 +123,12 @@ class PsychologistController extends Controller
      * @param  \App\Psychologist  $psychologist
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Psychologist $psychologist)
+    public function destroy($id)
     {
-      $psychologist->delete();
-
-      return back()->with('status', 'Esse psicólogo foi excluido');
+        //$psychologist = Psychologist::find($id);
+        //$psychologist->delete();
+        Psychologist::destroy($id);
+        return back()->with('status', 'Esse psicólogo foi excluido');
     
     }
     
