@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Validator;
 use Illuminate\Validation\Rule;
+use Datatable;
 
 
 class PeopleController extends Controller

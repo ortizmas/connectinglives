@@ -29,14 +29,14 @@
 <div class="row">
     <div class="col-md">
 		<div class="form-group">
-			{{ Form::label('specialties_id', 'Especialidades') }}
-			{{ Form::select('specialties_id',$especialidades, null, ['class' => 'form-control', 'placeholder' => ' -- Selecione sua especialidade -- ']) }}
+			{{ Form::label('specialty_id', 'Especialidades') }}
+			{{ Form::select('specialty_id',$especialidades, null, ['class' => 'form-control', 'placeholder' => ' -- Selecione sua especialidade -- ']) }}
 		</div>
 	</div>
     <div class="col-md">
 		<div class="form-group">
-			{{ Form::label('levels_id', 'Nível') }}
-			{{ Form::select('levels_id',$niveis, null, ['class' => 'form-control','placeholder' => ' -- Selecione seu nível -- ']) }}
+			{{ Form::label('level_id', 'Nível') }}
+			{{ Form::select('level_id',$niveis, null, ['class' => 'form-control','placeholder' => ' -- Selecione seu nível -- ']) }}
 		</div>
 	</div>
 	
