@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Validator;
 use Illuminate\Validation\Rule;
-use Datatable;
+use DataTables;
 
 
 class PeopleController extends Controller
@@ -24,7 +24,7 @@ class PeopleController extends Controller
     {
         $peoples = People::paginate();
 
-    	return view('admin.peoples.index', compact('peoples'));
+    	return DataTables::of(People::query())->make(true);
     }
 
     public function create()

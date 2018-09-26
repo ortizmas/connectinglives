@@ -95,13 +95,9 @@
           $(function() {
                 $('#table').DataTable({
                 processing: true,
-                serverSide: true,
-                ajax: '{{ url('index') }}',
-                columns: [
-                         { data: 'id', name: 'id' },
-                         { data: 'name', name: 'name' },
-                         { data: 'email', name: 'email' }
-                      ]
+                serverSide: true
+             
+                
              });
           });
           </script>
