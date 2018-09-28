@@ -1,9 +1,12 @@
 @extends('layouts.admin.app')
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
+{{-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
          <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+         <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> --}}
+@section('styles')
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+@endsection
 @section('content')
 
 <div class="container-fluid">
@@ -25,7 +28,7 @@
                         </div>
                     @endif
                     
-                    <table class="table table-bordered" id="table">
+                    <table id="people-table" class="table table-bordered" >
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">#</th>
@@ -41,49 +44,12 @@
                                 <th>Número</th>
                                 <th>Bairro</th>
                                 <th>Complemento</th> --}}
-                                <th>Curso</th>
-                                <th>Situação</th>
+                                {{-- <th>Curso</th> --}}
+                               {{--  <th>Situação</th> --}}
                                 <th scope="col">Status</th>
                                 <th scope="col" colspan="3">Opções</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach ($peoples as $people)
-                                <tr>
-                                    <th scope="row">{{ $people->id }}</th>
-                                    <td>{{ $people->full_name }}</td>
-                                    <td>{{ $people->cpf }}</td>
-                                    <td>{{ $people->email }}</td>
-                                    {{-- <td>{{ $people->data_of_birth }}</td> --}}
-                                    <td>{{ $people->phone }}</td>
-                                    {{-- <td>{{ $people->cep }}</td>
-                                   
-                                    <td>{{ $people->street }}</td>
-                                    <td>{{ $people->number }}</td>
-                                    <td>{{ $people->neighborhood }}</td>
-                                    <td>{{ $people->complement }}</td> --}}
-                                    {{-- <td>{{ $people->course->name }}</td> --}}
-                                    <td>{{ ($people->status == 1) ? 'Ativo' : 'Inativo' }}</td>
-                                    <td>
-                                        @can('peoples.show', Model::class)
-                                            <a href="{{ route('peoples.show', $people->id) }}" class="btn btn-outline-success btn-sm">Ver</a>
-                                        @endcan
-                                    </td>
-                                    <td>
-                                        @can('peoples.edit', Model::class)
-                                            <a href="{{ route('peoples.edit', $people->id) }}" class="btn btn-outline-info btn-sm">Alterar</a>
-                                        @endcan
-                                    </td>
-                                    <td>
-                                        @can('peoples.destroy', Model::class)
-                                            {!! Form::open(['route' => ['peoples.destroy', $people->id] , 'method' => 'DELETE']) !!}
-                                                <button class="btn btn-danger btn-sm">Excluir</button>
-                                            {!! Form::close() !!}
-                                        @endcan
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
                     </table>                   
                 </div>
             </div>
@@ -91,15 +57,29 @@
     </div>
 </div>
 @endsection
- <script>
-          $(function() {
-                $('#table').DataTable({
+
+@section('scripts')
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(function() {
+            $('#people-table').DataTable({
                 processing: true,
-                serverSide: true
-             
-                
-             });
-          });
-          </script>
+                serverSide: true,
+                ajax: 'peoples/add-edit-remove-column-data',
+                columns: [
+                    {data: 'id', name: 'id'},
+                    {data: 'full_name', name: 'full_name'},
+                    {data: 'cpf', name: 'cpf'},
+                    {data: 'email', name: 'email'},
+                    {data: 'phone', name: 'phone'},
+                    {data: 'created_at', name: 'created_at'},
+                    {data: 'updated_at', name: 'updated_at'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
+                ]
+            });
+        });
+    </script>
+@endsection
  
       

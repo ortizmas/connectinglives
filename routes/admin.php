@@ -72,6 +72,10 @@ Route::get('courses/{course}/edit', 'Admin\CourseController@edit')->name('course
 //Peoples
 Route::get('peoples', 'Admin\PeopleController@index')->name('peoples.index')
 ->middleware('permission:peoples.index');
+Route::get('peoples/basic-data', 'Admin\PeopleController@getBasicData')->name('peoples.getData')
+->middleware('permission:peoples.index');
+Route::get('peoples/add-edit-remove-column-data', 'Admin\PeopleController@getAddEditRemoveColumnData')->name('peoples.actions')
+->middleware('permission:peoples.index');
 Route::get('peoples/create', 'Admin\PeopleController@create')->name('peoples.create')
 ->middleware('permission:peoples.create');
 Route::post('peoples/store', 'Admin\PeopleController@store')->name('peoples.store')

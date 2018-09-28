@@ -22,9 +22,30 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        $peoples = People::paginate();
+        //$peoples = People::paginate();
 
-    	return DataTables::of(People::query())->make(true);
+    	//return DataTables::of(People::query())->make(true);
+        // dd($dataTable['data']);
+        return View('admin.peoples.index');
+    }
+
+    public function getBasicData()
+    {
+        $people = People::select(['id','full_name','email','cpf','created_at','updated_at']);
+
+        return Datatables::of($people)->make(true);
+    }
+
+    public function getAddEditRemoveColumnData()
+    {
+        $peoples = People::select(['id','full_name','cpf','email','phone','created_at','updated_at']);
+
+        return Datatables::of($peoples)
+            ->addColumn('action', function ($people) {
+                return '<a href="#edit-'.$people->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+            })
+            ->editColumn('id', 'ID: {{$id}}')
+            ->make(true);
     }
 
     public function create()
