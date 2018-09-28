@@ -22,11 +22,11 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        //$peoples = People::paginate();
+        $data = People::paginate();
 
     	//return DataTables::of(People::query())->make(true);
         // dd($dataTable['data']);
-        return View('admin.peoples.index');
+        return View('admin.peoples.index', compact('data'));
     }
 
     public function getBasicData()
@@ -38,13 +38,13 @@ class PeopleController extends Controller
 
     public function getAddEditRemoveColumnData()
     {
-        $peoples = People::select(['id','full_name','cpf','email','phone','created_at','updated_at']);
+        $peoples = People::select(['id','full_name','cpf','email','phone']);
 
         return Datatables::of($peoples)
             ->addColumn('action', function ($people) {
                 return '<a href="#edit-'.$people->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
             })
-            ->editColumn('id', 'ID: {{$id}}')
+            // ->editColumn('id', '{{$id}}')
             ->make(true);
     }
 
