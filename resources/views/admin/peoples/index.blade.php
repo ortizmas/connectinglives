@@ -1,25 +1,3 @@
-{{-- 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Datatables implementation in laravel - justlaravel.com</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<script
-    src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-<link rel="stylesheet"
-    href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet"
-    href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
-<script
-    src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<style>
-</style>
-<body> --}}
 @extends('layouts.admin.app')
 
 @section('styles')
@@ -44,36 +22,36 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        <div id="ok"></div>
                         {{ csrf_field() }}
                         <div class="table-responsive">
                             <table class="table table-borderless" id="table">
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
-                                        <th class="text-center">First Name</th>
-                                        <th class="text-center">Last Name</th>
+                                        <th class="text-center">Nome</th>
+                                        <th class="text-center">CPF</th>
                                         <th class="text-center">Email</th>
-                                        <th class="text-center">Gender</th>
-                                        <th class="text-center">Country</th>
-                                        <th class="text-center">Salary ($)</th>
+                                        <th class="text-center">Estado</th>
                                         <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 @foreach($data as $item)
                                 <tr class="item{{$item->id}}">
                                     <td>{{$item->id}}</td>
-                                    <td>{{$item->first_name}}</td>
-                                    <td>{{$item->last_name}}</td>
+                                    <td>{{$item->full_name}}</td>
+                                    <td>{{$item->cpf}}</td>
                                     <td>{{$item->email}}</td>
-                                    <td>{{$item->gender}}</td>
-                                    <td>{{$item->country}}</td>
-                                    <td>{{$item->salary}}</td>
-                                    <td><button class="edit-modal btn btn-info"
-                                            data-info="{{$item->id}},{{$item->first_name}},{{$item->last_name}},{{$item->email}},{{$item->gender}},{{$item->country}},{{$item->salary}}">
-                                            <i class="fa fa-edit"></i>
-                                        </button>
-                                        <button class="delete-modal btn btn-danger"
-                                            data-info="{{$item->id}},{{$item->first_name}},{{$item->last_name}},{{$item->email}},{{$item->gender}},{{$item->country}},{{$item->salary}}">
+                                    <td>{{$item->status}}</td>
+                                    <td class="float-right">
+                                        @can('peoples.show', Model::class)
+                                            <a href="{{ route('peoples.show', $item->id) }}" class="btn btn-outline-success btn-sm"><i class="fa fa-eye"></i></a>
+                                        @endcan
+                                        @can('peoples.edit', Model::class)
+                                            <a href="{{ route('peoples.edit', $item->id) }}" class="btn btn-outline-info btn-sm"><i class="fa fa-edit"></i></a>
+                                        @endcan
+                                        <button class="delete-modal btn btn-outline-danger btn-sm"
+                                            data-info="{{$item->id}},{{$item->full_name}}">
                                             <i class="fa fa-trash"></i>
                                         </button></td>
                                 </tr>
@@ -89,68 +67,12 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title"></h4>
-
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="id">ID</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="fid" disabled>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="fname">First Name</label>
-                            <div class="col-sm-10">
-                                <input type="name" class="form-control" id="fname">
-                            </div>
-                        </div>
-                        <p class="fname_error error text-center alert alert-danger hidden"></p>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="lname">Last Name:</label>
-                            <div class="col-sm-10">
-                                <input type="name" class="form-control" id="lname">
-                            </div>
-                        </div>
-                        <p class="lname_error error text-center alert alert-danger hidden"></p>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="email">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                        </div>
-                        <p class="email_error error text-center alert alert-danger hidden"></p>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="gender">Gender</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="gender" name="gender">
-                                    <option value="" disabled selected>Choose your option</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="country">Country:</label>
-                            <div class="col-sm-10">
-                                <input type="name" class="form-control" id="country">
-                            </div>
-                        </div>
-                        <p
-                            class="country_error error text-center alert alert-danger hidden"></p>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="salary">Salary </label>
-                            <div class="col-sm-10">
-                                <input type="name" class="form-control" id="salary">
-                            </div>
-                        </div>
-                        <p
-                            class="salary_error error text-center alert alert-danger hidden"></p>
-                    </form>
                     <div class="deleteContent">
-                        Are you Sure you want to delete <span class="dname"></span> ? <span
+                        Tem certeza de que deseja excluir <span class="dname"></span> ? <span
                             class="hidden did"></span>
                     </div>
                     <div class="modal-footer">
@@ -179,22 +101,6 @@
   </script>
 
     <script>
-    
-    $(document).on('click', '.edit-modal', function() {
-        $('#footer_action_button').text(" Update");
-        $('#footer_action_button').addClass('glyphicon-check');
-        $('#footer_action_button').removeClass('glyphicon-trash');
-        $('.actionBtn').addClass('btn-success');
-        $('.actionBtn').removeClass('btn-danger');
-        $('.actionBtn').removeClass('delete');
-        $('.actionBtn').addClass('edit');
-        $('.modal-title').text('Edit');
-        $('.deleteContent').hide();
-        $('.form-horizontal').show();
-        var stuff = $(this).data('info').split(',');
-        fillmodalData(stuff)
-        $('#myModal').modal('show');
-    });
     $(document).on('click', '.delete-modal', function() {
         $('#footer_action_button').text(" Delete");
         $('#footer_action_button').removeClass('glyphicon-check');
@@ -208,151 +114,27 @@
         $('.form-horizontal').hide();
         var stuff = $(this).data('info').split(',');
         $('.did').text(stuff[0]);
-        $('.dname').html(stuff[1] +" "+stuff[2]);
+        $('.dname').html(stuff[1]);
         $('#myModal').modal('show');
     });
-function fillmodalData(details){
-    $('#fid').val(details[0]);
-    $('#fname').val(details[1]);
-    $('#lname').val(details[2]);
-    $('#email').val(details[3]);
-    $('#gender').val(details[4]);
-    $('#country').val(details[5]);
-    $('#salary').val(details[6]);
-}
-    $('.modal-footer').on('click', '.edit', function() {
-        $.ajax({
-            type: 'post',
-            url: '/editItem',
-            data: {
-                '_token': $('input[name=_token]').val(),
-                'id': $("#fid").val(),
-                'fname': $('#fname').val(),
-                'lname': $('#lname').val(),
-                'email': $('#email').val(),
-                'gender': $('#gender').val(),
-                'country': $('#country').val(),
-                'salary': $('#salary').val()
-            },
-            success: function(data) {
-                if (data.errors){
-                    $('#myModal').modal('show');
-                    if(data.errors.fname) {
-                        $('.fname_error').removeClass('hidden');
-                        $('.fname_error').text("First name can't be empty !");
-                    }
-                    if(data.errors.lname) {
-                        $('.lname_error').removeClass('hidden');
-                        $('.lname_error').text("Last name can't be empty !");
-                    }
-                    if(data.errors.email) {
-                        $('.email_error').removeClass('hidden');
-                        $('.email_error').text("Email must be a valid one !");
-                    }
-                    if(data.errors.country) {
-                        $('.country_error').removeClass('hidden');
-                        $('.country_error').text("Country must be a valid one !");
-                    }
-                    if(data.errors.salary) {
-                        $('.salary_error').removeClass('hidden');
-                        $('.salary_error').text("Salary must be a valid format ! (ex: #.##)");
-                    }
-                }
-                 else {
-                     
-                     $('.error').addClass('hidden');
-                $('.item' + data.id).replaceWith("<tr class='item" + data.id + "'><td>" +
-                        data.id + "</td><td>" + data.first_name +
-                        "</td><td>" + data.last_name + "</td><td>" + data.email + "</td><td>" +
-                         data.gender + "</td><td>" + data.country + "</td><td>" + data.salary +
-                          "</td><td><button class='edit-modal btn btn-info' data-info='" + data.id+","+data.first_name+","+data.last_name+","+data.email+","+data.gender+","+data.country+","+data.salary+"'><span class='glyphicon glyphicon-edit'></span> Edit</button> <button class='delete-modal btn btn-danger' data-info='" + data.id+","+data.first_name+","+data.last_name+","+data.email+","+data.gender+","+data.country+","+data.salary+"' ><span class='glyphicon glyphicon-trash'></span> Delete</button></td></tr>");
-                 }}
-        });
-    });
+
     $('.modal-footer').on('click', '.delete', function() {
         $.ajax({
             type: 'post',
-            url: '/deleteItem',
+            url: '/peoples/delete/item',
             data: {
                 '_token': $('input[name=_token]').val(),
                 'id': $('.did').text()
             },
             success: function(data) {
                 $('.item' + $('.did').text()).remove();
+                $('#ok').html('<div class="alert alert-success">O item com id ' +  $('.did').text() + ' foi excluido!! </div>');
+            },
+
+            error: function(data) {
+                $('#ok').html('<div class="alert alert-danger">O item com id ' +  $('.did').text() + ' não foi excluido!! </div>');
             }
         });
     });
 </script>
 @endsection
-
-
-
-{{-- @extends('layouts.admin.app')
-@section('styles')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-@endsection
-@section('content')
-
-<div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    Pessoas
-                    @can('pessoas.create', Model::class)
-                        <a href="{{ route('peoples.create') }}" title="Cadastrar Pessoa" class="btn btn-outline-info btn-sm w-25 float-right">Nova Pessoa</a>
-                    @endcan
-                </div>
-                
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    
-                    <table id="people-table" class="table table-bordered" >
-                        <thead class="thead-dark">
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nome</th>
-                                <th>CPF</th>
-                                <th>Email</th>
-                                <th>Telefone</th>
-                                <th scope="col" colspan="3">Opções</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>                   
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
-
-@section('scripts')
-    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        $(function() {
-            $('#people-table').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: 'peoples/add-edit-remove-column-data',
-                columns: [
-                    {data: 'id', name: 'id'},
-                    {data: 'full_name', name: 'full_name'},
-                    {data: 'cpf', name: 'cpf'},
-                    {data: 'email', name: 'email'},
-                    {data: 'phone', name: 'phone'},
-                    {data: 'action', name: 'action', orderable: false, searchable: false}
-                ]
-            });
-        });
-    </script>
-@endsection
- 
-       --}}

@@ -11,7 +11,7 @@ use Auth;
 use Validator;
 use Illuminate\Validation\Rule;
 use DataTables;
-
+use Response;
 
 class PeopleController extends Controller
 {
@@ -115,12 +115,40 @@ class PeopleController extends Controller
      * @param  \App\People  $people
      * @return \Illuminate\Http\Response
      */
-    public function destroy(People $people)
+    public function delete(Request $request)
     {
-      $people->delete();
+        $address = Address::where('people_id', $request->id)->pluck('id');
+        if ($address->count() > 0) {
+            Address::find($address[0])->delete();
+            $people = People::find( $request->id )->delete();
+            if ($people) {
+                return Response::json('success', 200);
+            } else {
+                return Response::json('error', 400);
+            }
+        } else {
+            $people = People::find( $request->id )->delete();
+            if ($people) {
+                return Response::json('success', 200);
+            } else {
+                return Response::json('error', 400);
+            }
+        }
 
-      return back()->with('status', 'Essa pessoa foi excluida');
-    
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\People  $people
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        People::find( $request->id )->delete();
+        //return response()->json ();
+        //$people->delete();
+        return back()->with('status', 'Essa pessoa foi excluida');
     }
 
     public function validator(array $data, $people)

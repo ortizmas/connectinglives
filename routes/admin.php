@@ -86,11 +86,13 @@ Route::put('peoples/{people}', 'Admin\PeopleController@update')->name('peoples.u
 ->middleware('permission:peoples.edit');
 Route::get('peoples/{people}', 'Admin\PeopleController@show')->name('peoples.show')
 ->middleware('permission:peoles.show');
-Route::delete('peoples/{people}', 'Admin\PeopleController@destroy')->name('peoples.destroy')
-->middleware('permission:peoples.destroy');
+Route::post('/peoples/delete/item', 'Admin\PeopleController@delete')->name('people.delete')
+->middleware('permission:peoles.destroy');
+// Route::delete('peoples/{people}', 'Admin\PeopleController@destroy')->name('peoples.destroy')
+// ->middleware('permission:peoples.destroy');
 
 
-//Peoples
+//Countries
 Route::get('countries', 'Admin\CountryController@index')->name('countries.index')
 ->middleware('permission:countries.index');
 Route::get('countries/create', 'Admin\CountryController@create')->name('countries.create')
