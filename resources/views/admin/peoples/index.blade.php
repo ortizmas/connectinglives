@@ -25,7 +25,7 @@
                         <div id="ok"></div>
                         {{ csrf_field() }}
                         <div class="table-responsive">
-                            <table class="table table-borderless" id="table">
+                            <table class="table table-striped table-bordered" id="table">
                                 <thead>
                                     <tr>
                                         <th class="text-center">#</th>
@@ -96,7 +96,21 @@
     <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(function() {
-            $('#table').DataTable();
+            $('#table').DataTable({
+                "language": {
+                    "lengthMenu": "Exibição _MENU_  registros por página",
+                    "zeroRecords": "Nada encontrado - sorry",
+                    "info": "Mostrando _PAGE_ página de _PAGES_",
+                    "infoEmpty": "Nenhum registro disponível",
+                    "infoFiltered": "(filtrado de _MAX_ total registros)",
+                    "sSearch": "Pesquisar:",
+                    "sUrl":"",
+                    "oPaginate": {
+                        "sPrevious": "Anterior",
+                        "sNext": "Próxima"
+                    },
+                }
+            } );
         });
   </script>
 
