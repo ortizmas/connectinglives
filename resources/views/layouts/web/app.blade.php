@@ -43,7 +43,7 @@
         <!--Incluendo Menu -->
         @include('layouts.web.partials.menu', ['some' => 'data'])
 
-        <main class="py-4">
+        <main class="py-0">
             @yield('content')
         </main>
 

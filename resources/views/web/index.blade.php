@@ -3,14 +3,14 @@
 @section('content')
 
 <!-- ***** Wellcome Area Start ***** -->
-<section class="wellcome_area clearfix" id="home">
+<section class="wellcome_area clearfix" id="home" style="background: url({{ asset('web/img/bg-img/bg-1.jpg') }});">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md">
                 <div class="wellcome-heading">
-                    <h2>Colorlib app</h2>
-                    <h3>C</h3>
-                    <p>Everything You Need. To Start Selling Online Beautifully</p>
+                    <h1 class="text-white">Sua saúde <br> emocional em <br> 1 lugar!</h1 class="text-white">
+                    <h3>CV</h3>
+                    {{-- <p>Everything You Need. To Start Selling Online Beautifully</p> --}}
                 </div>
                 <div class="get-start-area">
                     <!-- Form Start -->
