@@ -425,11 +425,11 @@ p {
 
 .wellcome_area {
     background-image: url(img/bg-img/welcome-bg.png);
-    height: 900px;
+    height: 700px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
-    background-size: cover;
+    background-size: cover !important;
 }
 
 .wellcome_area:after {
@@ -469,6 +469,19 @@ p {
     font-weight: 700;
     position: relative;
     z-index: 3;
+}
+
+.bg-description{
+    background: #10a1a9;
+    background: -webkit-linear-gradient(to left, #10a1a9, #44bea7);
+    background: -webkit-linear-gradient(right, #10a1a9, #44bea7);
+    background: -webkit-gradient(linear, right top, left top, from(#10a1a9), to(#44bea7));
+    background: -o-linear-gradient(right, #10a1a9, #44bea7);
+    background: linear-gradient(to left, #10a1a9, #44bea7);
+}
+
+.bg-blue{
+    background: #f5f9fc!important;
 }
 
 .get-start-area .email {

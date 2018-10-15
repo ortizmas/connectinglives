@@ -23,6 +23,46 @@
             nav: true,
             navText: ["<i class='pe-7s-angle-left'</i>", "<i class='pe-7s-angle-right'</i>"]
         });
+        $(".anuncios_slides").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            smartSpeed: 800,
+            margin: 30,
+            center: true,
+            dots: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 1
+                },
+                992: {
+                    items: 1
+                }
+            }
+        });
+        $(".nossos_psicologos_slides").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            smartSpeed: 800,
+            margin: 30,
+            center: true,
+            dots: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                992: {
+                    items: 4
+                }
+            }
+        });
         $(".app_screenshots_slides").owlCarousel({
             items: 1,
             loop: true,

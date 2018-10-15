@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- ***** Wellcome Area Start ***** -->
-<section class="wellcome_area clearfix" id="home" style="background: url({{ asset('web/img/bg-img/bg-1.jpg') }});">
+<section class="wellcome_area clearfix" id="home" style="background: url({{ asset('web/img/bg-img/bg-home-6.jpg') }});">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md">
@@ -24,20 +24,51 @@
         </div>
     </div>
     <!-- Welcome thumb -->
-    <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
-        <img src="web/img/bg-img/welcome-img.png" alt="">
+    <div class="welcome-thumb wow fadeInDown pt-5" data-wow-delay="0.5s">
+        {{-- <img src="web/img/bg-img/welcome-img.png" alt=""> --}}
+        <div class="anuncios_slides owl-carousel pt-5">
+            <div class="single-shot">
+                <a href="#" title=""><img src="web/img/anuncios/anuncio-1.png" alt="" class="img-fluid"></a>
+            </div>
+            <div class="single-shot">
+                <a href="#" title=""><img src="web/img/anuncios/anuncio-2.png" alt="" class="img-fluid"></a>
+            </div>
+            <div class="single-shot">
+                <a href="" title=""><img src="web/img/anuncios/anuncio-3.png" alt="" class="img-fluid"></a>
+            </div>
+        </div>
     </div>
 </section>
 <!-- ***** Wellcome Area End ***** -->
 
+<section class="bg-description section_padding_100" id="about">
+    <div class="container">
+        <div class="row justify-content-center">
+            
+            <div class="col-sm-12 col-md-8 align-content-center">
+                <div class="section-heading text-center">
+                    <h2 class="text-white">Description of content</h2>
+                    <div class="line-shape bg-white"></div>
+                </div>
+                <p class="text-justify text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ***** Special Area Start ***** -->
-<section class="special-area bg-white section_padding_100" id="about">
+<section class="special-area bg-white section_padding_100">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <!-- Section Heading Area -->
                 <div class="section-heading text-center">
-                    <h2>Why Is It Special</h2>
+                    <h2>Para o cliente</h2>
                     <div class="line-shape"></div>
                 </div>
             </div>
@@ -50,7 +81,7 @@
                     <div class="single-icon">
                         <i class="ti-mobile" aria-hidden="true"></i>
                     </div>
-                    <h4>Easy to use</h4>
+                    <h4>FAST</h4>
                     <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
                 </div>
             </div>
@@ -60,7 +91,7 @@
                     <div class="single-icon">
                         <i class="ti-ruler-pencil" aria-hidden="true"></i>
                     </div>
-                    <h4>Powerful Design</h4>
+                    <h4>SECURE</h4>
                     <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
                 </div>
             </div>
@@ -70,14 +101,14 @@
                     <div class="single-icon">
                         <i class="ti-settings" aria-hidden="true"></i>
                     </div>
-                    <h4>Customizability</h4>
+                    <h4>EASY</h4>
                     <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Special Description Area -->
-    <div class="special_description_area mt-150">
+    {{-- <div class="special_description_area mt-150">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -109,25 +140,201 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 </section>
 <!-- ***** Special Area End ***** -->
 
-<!-- ***** Awesome Features Start ***** -->
-<section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
+<!-- ***** Nossos PsicologosArea Start ***** -->
+<section class="app-screenshots-area bg-white section_padding_0_100 clearfix">
     <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <!-- Heading Text  -->
+                <div class="section-heading">
+                    <h2>Conheça alguns de nossos psicologos</h2>
+                    <div class="line-shape"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- Nossos PsicologosSlides  -->
+                <div class="nossos_psicologos_slides owl-carousel">
+                    <div class="single-shot">
+                        <div class="single-team-member">
+                            <div class="member-image">
+                                <img src="web/img/team-img/team-1.jpg" alt="">
+                                <div class="team-hover-effects">
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-text">
+                                <h4>Jackson Nash</h4>
+                                <p>Tax Advice</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-shot">
+                        <div class="single-team-member">
+                            <div class="member-image">
+                                <img src="web/img/team-img/team-2.jpg" alt="">
+                                <div class="team-hover-effects">
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-text">
+                                <h4>Alex Manning</h4>
+                                <p>CEO-Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-shot">
+                        <div class="single-team-member">
+                            <div class="member-image">
+                                <img src="web/img/team-img/team-3.jpg" alt="">
+                                <div class="team-hover-effects">
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-text">
+                                <h4>Ollie Schneider</h4>
+                                <p>Business Planner</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-shot">
+                        <div class="single-team-member">
+                            <div class="member-image">
+                                <img src="web/img/team-img/team-4.jpg" alt="">
+                                <div class="team-hover-effects">
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-text">
+                                <h4>Roger West</h4>
+                                <p>Financer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-shot">
+                        <div class="single-team-member">
+                            <div class="member-image">
+                                <img src="web/img/team-img/team-4.jpg" alt="">
+                                <div class="team-hover-effects">
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-text">
+                                <h4>Roger West</h4>
+                                <p>Financer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-shot">
+                        <div class="single-team-member">
+                            <div class="member-image">
+                                <img src="web/img/team-img/team-4.jpg" alt="">
+                                <div class="team-hover-effects">
+                                    <div class="team-social-icon">
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="member-text">
+                                <h4>Roger West</h4>
+                                <p>Financer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Nossos Psicologos Area End *****====== -->
+
+<!-- ***** Awesome Features Start ***** -->
+<section class="awesome-feature-area bg-white section_padding_0_50" id="features">
+    <div class="container pb-5">
         <div class="row">
             <div class="col-12">
                 <!-- Heading Text -->
                 <div class="section-heading text-center">
-                    <h2>Awesome Features</h2>
+                    <h2>Para psicologo</h2>
                     <div class="line-shape"></div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <!-- Single Feature Start -->
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-10">
+                <div class="row align-items-center wow slideInLeft" data-wow-offset="10" data-wow-duration="2s" data-wow-delay="1s">
+                    <div class="col-md-4">
+                        <img src="{{ asset('web/img/icons/story.png') }}" alt="" class="img-fluid w-75">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="single-feature">
+                            <h5>OUR STORY</h5>
+                            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you. This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center wow slideInLeft" data-wow-offset="10"  data-wow-iteration="1" data-wow-delay="2s">
+                    <div class="col-md-4">
+                        <img src="{{ asset('web/img/icons/vision-1.png') }}" alt="" class="img-fluid w-75">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="single-feature">
+                            <h5>OUR VISION</h5>
+                            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you. This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center wow slideInLeft" data-wow-offset="10"  data-wow-iteration="1" data-wow-delay="3s">
+                    <div class="col-md-4">
+                        <img src="{{ asset('web/img/icons/tecnology.png') }}" alt="" class="img-fluid w-75">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="single-feature">
+                            <h5>TECHNOLOGY</h5>
+                            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you. This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- <div class="row">
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-user" aria-hidden="true"></i>
@@ -135,7 +342,6 @@
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-pulse" aria-hidden="true"></i>
@@ -143,7 +349,6 @@
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-dashboard" aria-hidden="true"></i>
@@ -151,7 +356,6 @@
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-palette" aria-hidden="true"></i>
@@ -159,7 +363,6 @@
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-crown" aria-hidden="true"></i>
@@ -167,7 +370,6 @@
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-headphone" aria-hidden="true"></i>
@@ -175,7 +377,7 @@
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 </section>
