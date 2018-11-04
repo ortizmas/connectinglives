@@ -1,30 +1,26 @@
 <!-- ***** Footer Area Start ***** -->
 <footer class="footer-social-icon text-center section_padding_70 clearfix">
-    <!-- footer logo -->
     <div class="footer-text">
-        <h2>Ca.</h2>
+        <h2>CV</h2>
     </div>
-    <!-- social icon-->
     <div class="footer-social-icon">
-        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="#"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+        <a href="https://www.facebook.com/conectevida" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://www.twitter.com/conectevida" target="_blank"><i class="active fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/conectevida" target="_blank"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/conectevida" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
     </div>
     <div class="footer-menu">
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Quem somos?</a></li>
+                <li><a href="#">Termos &amp; Condições</a></li>
+                <li><a href="#">Política de Privacidade</a></li>
+                <li><a href="#">Contato</a></li>
             </ul>
         </nav>
     </div>
-    <!-- Foooter Text-->
     <div class="copyright-text">
-        <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
-        <p>Copyright ©2017 Ca. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+        <p>Copyright ©2018 Projeto por <a href="https://conectevida.com" target="_blank">Conecte Vida</a></p>
     </div>
 </footer>
 <!-- ***** Footer Area Start ***** -->

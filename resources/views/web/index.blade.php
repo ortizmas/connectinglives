@@ -383,12 +383,29 @@
 </section>
 <!-- ***** Awesome Features End ***** -->
 
+<section class="quem-somos bg-info">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md m-0 p-0">
+                <img src="{{ asset('web/img/bg-img/bg-1.jpg') }}" alt="" class="img-fluid m-0 p-0">
+            </div>
+            <div class="col-md">
+                <h1 class="text-white">Quem somos?</h1>
+                <p class="text-white text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- ***** Video Area Start ***** -->
-<div class="video-section">
+{{-- <div class="video-section">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <!-- Video Area Start -->
                     <div class="video-play-btn">
                         <a href="https://www.youtube.com/watch?v=f5BBJ4ySgpo" class="video_btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                     </div>
@@ -396,11 +413,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- ***** Video Area End ***** -->
 
 <!-- ***** Cool Facts Area Start ***** -->
-<section class="cool_facts_area clearfix">
+{{-- <section class="cool_facts_area clearfix">
     <div class="container">
         <div class="row">
             <!-- Single Cool Fact-->
@@ -453,15 +470,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ***** Cool Facts Area End ***** -->
 
 <!-- ***** App Screenshots Area Start ***** -->
-<section class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
+{{-- <section class="app-screenshots-area bg-white section_padding_0_100 clearfix" id="screenshot">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <!-- Heading Text  -->
                 <div class="section-heading">
                     <h2>App Screenshots</h2>
                     <div class="line-shape"></div>
@@ -472,7 +488,6 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <!-- App Screenshots Slides  -->
                 <div class="app_screenshots_slides owl-carousel">
                     <div class="single-shot">
                         <img src="web/img/scr-img/app-1.jpg" alt="">
@@ -496,15 +511,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ***** App Screenshots Area End *****====== -->
 
 <!-- ***** Pricing Plane Area Start *****==== -->
-<section class="pricing-plane-area section_padding_100_70 clearfix" id="pricing">
+{{-- <section class="pricing-plane-area section_padding_100_70 clearfix" id="pricing">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <!-- Heading Text  -->
                 <div class="section-heading text-center">
                     <h2>Pricing Plan</h2>
                     <div class="line-shape"></div>
@@ -514,9 +528,7 @@
 
         <div class="row no-gutters">
             <div class="col-12 col-md-6 col-lg-3">
-                <!-- Package Price  -->
                 <div class="single-price-plan text-center">
-                    <!-- Package Text  -->
                     <div class="package-plan">
                         <h5>Starter Plan</h5>
                         <div class="ca-price d-flex justify-content-center">
@@ -531,16 +543,13 @@
                         <p>24/7 Support</p>
                         <p>10 Unique Users</p>
                     </div>
-                    <!-- Plan Button  -->
                     <div class="plan-button">
                         <a href="#">Select Plan</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-                <!-- Package Price  -->
                 <div class="single-price-plan text-center">
-                    <!-- Package Text  -->
                     <div class="package-plan">
                         <h5>Basic Plan</h5>
                         <div class="ca-price d-flex justify-content-center">
@@ -555,16 +564,13 @@
                         <p>24/7 Support</p>
                         <p>10 Unique Users</p>
                     </div>
-                    <!-- Plan Button  -->
                     <div class="plan-button">
                         <a href="#">Select Plan</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-                <!-- Package Price  -->
                 <div class="single-price-plan active text-center">
-                    <!-- Package Text  -->
                     <div class="package-plan">
                         <h5>Advenced Plan</h5>
                         <div class="ca-price d-flex justify-content-center">
@@ -579,16 +585,13 @@
                         <p>24/7 Support</p>
                         <p>10 Unique Users</p>
                     </div>
-                    <!-- Plan Button  -->
                     <div class="plan-button">
                         <a href="#">Select Plan</a>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3">
-                <!-- Package Price  -->
                 <div class="single-price-plan text-center">
-                    <!-- Package Text  -->
                     <div class="package-plan">
                         <h5>Community Plan</h5>
                         <div class="ca-price d-flex justify-content-center">
@@ -603,7 +606,6 @@
                         <p>24/7 Support</p>
                         <p>10 Unique Users</p>
                     </div>
-                    <!-- Plan Button  -->
                     <div class="plan-button">
                         <a href="#">Select Plan</a>
                     </div>
@@ -611,16 +613,15 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ***** Pricing Plane Area End ***** -->
 
 <!-- ***** Client Feedback Area Start ***** -->
-<section class="clients-feedback-area bg-white section_padding_100 clearfix" id="testimonials">
+{{-- <section class="clients-feedback-area bg-white section_padding_100 clearfix" id="testimonials">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-md-10">
                 <div class="slider slider-for">
-                    <!-- Client Feedback Text  -->
                     <div class="client-feedback-text text-center">
                         <div class="client">
                             <i class="fa fa-quote-left" aria-hidden="true"></i>
@@ -640,7 +641,6 @@
                             <p>Ceo Colorlib</p>
                         </div>
                     </div>
-                    <!-- Client Feedback Text  -->
                     <div class="client-feedback-text text-center">
                         <div class="client">
                             <i class="fa fa-quote-left" aria-hidden="true"></i>
@@ -660,7 +660,6 @@
                             <p>Developer</p>
                         </div>
                     </div>
-                    <!-- Client Feedback Text  -->
                     <div class="client-feedback-text text-center">
                         <div class="client">
                             <i class="fa fa-quote-left" aria-hidden="true"></i>
@@ -680,7 +679,6 @@
                             <p>Marketer</p>
                         </div>
                     </div>
-                    <!-- Client Feedback Text  -->
                     <div class="client-feedback-text text-center">
                         <div class="client">
                             <i class="fa fa-quote-left" aria-hidden="true"></i>
@@ -702,7 +700,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Client Thumbnail Area -->
             <div class="col-12 col-md-6 col-lg-5">
                 <div class="slider slider-nav">
                     <div class="client-thumbnail">
@@ -721,11 +718,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ***** Client Feedback Area End ***** -->
 
 <!-- ***** CTA Area Start ***** -->
-<section class="our-monthly-membership section_padding_50 clearfix">
+{{-- <section class="our-monthly-membership section_padding_50 clearfix">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">
@@ -741,15 +738,14 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ***** CTA Area End ***** -->
 
 <!-- ***** Our Team Area Start ***** -->
-<section class="our-Team-area bg-white section_padding_100_50 clearfix" id="team">
+{{-- <section class="our-Team-area bg-white section_padding_100_50 clearfix" id="team">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <!-- Heading Text  -->
                 <div class="section-heading">
                     <h2>Our Team</h2>
                     <div class="line-shape"></div>
@@ -835,7 +831,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- ***** Our Team Area End ***** -->
 
 <!-- ***** Contact Us Area Start ***** -->
@@ -845,54 +841,47 @@
             <div class="col-md-6">
                 <!-- Heading Text  -->
                 <div class="section-heading">
-                    <h2>Get in touch with us!</h2>
+                    <h2>Entre em contato conosco!</h2>
                     <div class="line-shape"></div>
                 </div>
                 <div class="footer-text">
-                    <p>We'll send you epic weekly blogs, whitepapers and things to make your app startup thrive, all FREE!</p>
+                    <p>Enviaremos a você blogs semanais épicos e outras informações para que a inicialização de seu aplicativo seja bem-sucedida, tudo GRATUITO!</p>
                 </div>
                 <div class="address-text">
-                    <p><span>Address:</span> 40 Baria Sreet 133/2 NewYork City, US</p>
+                    <p><span>Endereço:</span> BR-101, km 197, Capoeiruçu, Cachoeira Bahia, BRASIL</p>
                 </div>
                 <div class="phone-text">
-                    <p><span>Phone:</span> +11-225-888-888-66</p>
+                    <p><span>Telefone:</span> +55-(75)-888-888-666</p>
                 </div>
                 <div class="email-text">
-                    <p><span>Email:</span> info.deercreative@gmail.com</p>
+                    <p><span>E-mail:</span> conectevida@gmail.com</p>
                 </div>
             </div>
             <div class="col-md-6">
-                <!-- Form Start-->
                 <div class="contact_from">
                     <form action="#" method="post">
-                        <!-- Message Input Area Start -->
                         <div class="contact_input_area">
                             <div class="row">
-                                <!-- Single Input Area Start -->
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                                        <input type="text" class="form-control" name="name" id="name" placeholder="Seu Nome" required>
                                     </div>
                                 </div>
-                                <!-- Single Input Area Start -->
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your E-mail" required>
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Seu E-mail" required>
                                     </div>
                                 </div>
-                                <!-- Single Input Area Start -->
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Your Message *" required></textarea>
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Sua Mensagem *" required></textarea>
                                     </div>
                                 </div>
-                                <!-- Single Input Area Start -->
                                 <div class="col-12">
-                                    <button type="submit" class="btn submit-btn">Send Now</button>
+                                    <button type="submit" class="btn submit-btn">Enviar e-mail</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Message Input Area End -->
                     </form>
                 </div>
             </div>
