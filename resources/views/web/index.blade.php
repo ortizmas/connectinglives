@@ -383,6 +383,7 @@
 </section>
 <!-- ***** Awesome Features End ***** -->
 
+<!-- ***** Quem Somos Start ***** -->
 <section class="quem-somos bg-info">
     <div class="container-fluid">
         <div class="row align-items-center">
@@ -401,6 +402,27 @@
         </div>
     </div>
 </section>
+<!-- ***** Quem Somos End ***** -->
+
+<!-- ***** Quem Somos Start ***** -->
+<section class="frases">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md">
+                <h1 class="text-white">Frase do dia?</h1>
+                <p class="text-white text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Quem Somos End ***** -->
+
+
 <!-- ***** Video Area Start ***** -->
 {{-- <div class="video-section">
     <div class="container">

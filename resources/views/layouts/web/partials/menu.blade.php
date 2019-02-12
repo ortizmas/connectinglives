@@ -1,4 +1,4 @@
-***** Header Area Start ***** -->
+<!--***** Header Area Start ***** -->
 <header class="header_area animated">
     <div class="container-fluid">
         <div class="row align-items-center">
