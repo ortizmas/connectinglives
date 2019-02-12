@@ -11,8 +11,8 @@ class Psychologist extends Model
         'therapeutic_approach',
         'public',
         'status',
-        'specialties_id',
-        'levels_id',
+        'specialty_id',
+        'level_id',
         'people_id',
         
     ];

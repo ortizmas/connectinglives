@@ -41,7 +41,7 @@
                                     <td>{{ $psychologist->people->full_name }}</td>
                                     <td>{{ $psychologist->crp }}</td>
                                     <td>{{ $psychologist->therapeutic_approach }}</td>
-                                    <td>{{ $psychologist->specialties_id }}</td>
+                                    <td>{{ $psychologist->specialty->name }}</td>
                                     <td>{{ $psychologist->public }}</td>
                                    
                                     <td>{{ $psychologist->levels_id }}</td>
