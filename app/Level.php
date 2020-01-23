@@ -12,7 +12,7 @@ class Level extends Model
     ];
 
     protected $guarded = ['id'];
-    protected $table = 'levels';
+    //protected $table = 'levels';
     public $timestamps = false;
 
     public function psychologists()
