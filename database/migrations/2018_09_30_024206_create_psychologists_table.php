@@ -18,14 +18,14 @@ class CreatePsychologistsTable extends Migration
             $table->string('crp', 8);
             $table->string('therapeutic_approach', 255);
             $table->string('public', 45);
-            $table->character('status');
+            $table->char('status');
             $table->integer('specialties_id')->unsigned();
-            $table->integer('levels_id')->unsigned();
-            $table->integer('peoples_id')->unsigned();
+            $table->integer('level_id')->unsigned();
+            $table->integer('people_id')->unsigned();
             $table->foreign('specialties_id')->references('id')->on('specialties')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreign('levels_id')->references('id')->on('levels')
+            $table->foreign('level_id')->references('id')->on('levels')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('people_id')->references('id')->on('peoples')

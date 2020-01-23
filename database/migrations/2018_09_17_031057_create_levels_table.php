@@ -16,7 +16,7 @@ class CreateLevelsTable extends Migration
         Schema::create('levels', function (Blueprint $table) {
             $table->increments('id');
             $table->string('academic_level', 255);
-            $table->character('status');
+            $table->string('status', 1);
             $table->timestamps();
         });
     }

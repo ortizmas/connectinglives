@@ -29,7 +29,7 @@ class CreatePeopleTable extends Migration
             $table->string('number', 45);
             $table->string('neighborhood', 255);
             $table->string('complement', 45);
-            $table->character('situation', 1);
+            $table->char('situation', 1);
             $table->string('status', 45);
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
